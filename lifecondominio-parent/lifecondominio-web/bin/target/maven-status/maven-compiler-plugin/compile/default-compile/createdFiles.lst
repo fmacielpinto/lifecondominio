@@ -1,0 +1,17 @@
+br\com\lifecondominio\util\JSFMessageUtil.class
+br\com\lifecondominio\mb\CustomUserService.class
+br\com\lifecondominio\util\CpfConverter.class
+br\com\lifecondominio\ws\EventoWS.class
+br\com\lifecondominio\mb\CondominioBean.class
+br\com\lifecondominio\ws\NotificacaoBean.class
+br\com\lifecondominio\filter\LoginFilter.class
+br\com\lifecondominio\mb\BaseBean.class
+br\com\lifecondominio\mb\UsuarioBean.class
+br\com\lifecondominio\ws\CondominioWS.class
+br\com\lifecondominio\mb\LoginBean.class
+br\com\lifecondominio\util\BigDecimalConverter.class
+br\com\lifecondominio\mb\ContextoBean.class
+br\com\lifecondominio\util\Util.class
+br\com\lifecondominio\util\CnpjConverter.class
+br\com\lifecondominio\mb\OcorrenciaBean.class
+br\com\lifecondominio\util\Main.class

@@ -1,0 +1,63 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets" 
+			template="/sistema/layout/template.xhtml"
+			xmlns:p="http://primefaces.org/ui">	
+	<ui:define name="conteudo">	
+	<script src="#{facesContext.externalContext.requestContextPath}/lifecondominio/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="#{facesContext.externalContext.requestContextPath}/lifecondominio/vendors/bower_components/Waves/dist/waves.min.js"></script>
+	<script src="#{facesContext.externalContext.requestContextPath}/lifecondominio/vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+	<script src="#{facesContext.externalContext.requestContextPath}/lifecondominio/vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>  
+	<script src="#{facesContext.externalContext.requestContextPath}/lifecondominio/vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>	
+	
+	
+	
+	
+	<div class="container">
+		<h:form id="form" class="form-horizontal" role="form">
+			<div class="card">
+	            <div class="card-header">
+	                <h2>Lista de Usuários <small></small></h2>
+	                
+	                <p:commandLink  actionListener="#{usuarioBean.incluir}" styleClass="btn bgm-cyan btn-float">
+	                			<i class="zmdi zmdi-plus"></i>
+					</p:commandLink>
+	            </div>
+	            <div class="table-responsive">
+	           		<h:dataTable  styleClass="table table-striped"  binding="#{usuarioBean.dataTable}"
+	           		 var="usu" value="#{usuarioBean.usuarios}">
+	           			<h:column>
+	    					<f:facet name="header">login</f:facet>
+	    					#{usu.login}
+	    				</h:column>    			
+		    			<h:column>	    				
+		    				<f:facet name="header">Nome</f:facet>
+		    				#{usu.nome}
+		    			</h:column>	    			
+		    			
+		    			<h:column>
+		    				<f:facet name="header">Data Cadastro</f:facet>
+			    			<h:outputText value="#{usu.dataCadastro}">
+					          <f:convertDateTime pattern="dd/MM/yyyy HH:mm"/>
+					        </h:outputText>
+				        </h:column>
+				        <h:column>
+		    				<f:facet name="header">Data Atualização</f:facet>
+			    			<h:outputText value="#{usu.dataAtualizacao}">
+					          <f:convertDateTime pattern="dd/MM/yyyy HH:mm"/>
+					        </h:outputText>
+				        </h:column>
+		           		<h:column>			    				  
+							<f:facet name="header">Alterar</f:facet>
+		    				<h:commandLink  action="#{usuarioBean.editar()}"  >
+		    				       <button class="btn btn-success btn-icon"><i class="zmdi zmdi-more-vert"></i></button>
+		    				 </h:commandLink>
+      					</h:column>		    				
+					</h:dataTable>
+			    </div>		       
+        	</div>
+		</h:form>
+    </div>		
+	</ui:define>
+</ui:composition>

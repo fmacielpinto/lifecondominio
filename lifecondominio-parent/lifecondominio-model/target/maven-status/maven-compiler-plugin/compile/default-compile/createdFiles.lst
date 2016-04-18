@@ -1,0 +1,7 @@
+br\com\lifecondominio\model\Condominio.class
+br\com\lifecondominio\model\Ocorrencia.class
+br\com\lifecondominio\model\BaseModel.class
+br\com\lifecondominio\model\Administradora.class
+br\com\lifecondominio\model\Perfil.class
+br\com\lifecondominio\model\Usuario.class
+br\com\lifecondominio\model\Eventos.class

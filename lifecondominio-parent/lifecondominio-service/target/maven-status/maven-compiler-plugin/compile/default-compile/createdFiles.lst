@@ -1,0 +1,14 @@
+br\com\lifecondominio\service\impl\UsuarioService.class
+br\com\lifecondominio\service\impl\PerfilService.class
+br\com\lifecondominio\service\IAdministradoraService.class
+br\com\lifecondominio\service\impl\StringMD5.class
+br\com\lifecondominio\service\IService.class
+br\com\lifecondominio\service\IPerfilService.class
+br\com\lifecondominio\service\ICondominioService.class
+br\com\lifecondominio\service\impl\CondominioService.class
+br\com\lifecondominio\service\exception\BusinessException.class
+br\com\lifecondominio\service\impl\AdministradoraService.class
+br\com\lifecondominio\service\IUsuarioService.class
+br\com\lifecondominio\service\exception\CodigoMensagem.class
+br\com\lifecondominio\service\IOcorrenciaService.class
+br\com\lifecondominio\service\impl\OcorrenciaService.class

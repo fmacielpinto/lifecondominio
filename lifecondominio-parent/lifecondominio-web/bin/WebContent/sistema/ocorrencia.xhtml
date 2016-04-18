@@ -1,0 +1,170 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	 
+
+<ui:composition template="../sistema/layout/template.xhtml">
+	<ui:define name="conteudo">
+	<script src="#{facesContext.externalContext.requestContextPath}/lifecondominio/vendors/input-mask/input-mask.min.js"/>
+		<div class="container">
+                    <div class="block-header"></div>
+			
+					<div class="card">
+                        
+                        <form class="form-horizontal" role="form">
+                            <div class="card-header">
+                                <h2>Ocorrência - Notificação 
+                                <small> Problemas envolvendo moradores e terceiros.
+								</small></h2>
+                            </div>
+                            
+                            <div class="card-body card-padding">
+                             	
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Titulo</label>
+                                    <div class="col-sm-10">
+                                        <div class="fg-line">
+                                        	<c:if test="#{loginBean.usuario.perfils.get(0).descricao=='sindico' }">
+                                            	<p:inputText id="titulo"  value="#{ocorrenciaBean.ocorrencia.titulo}"   styleClass="form-control"/>
+                                            </c:if>
+                                            <c:if test="#{loginBean.usuario.perfils.get(0).descricao=='morador' }">
+                                            	<p:inputText id="titulo"  value="#{ocorrenciaBean.ocorrencia.titulo}"  disabled="true" styleClass="form-control"/>
+                                            </c:if>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Descrição</label>
+                                    <div class="col-sm-10">
+                                        <div class="fg-line">
+                                            <c:if test="#{loginBean.usuario.perfils.get(0).descricao=='sindico' }">
+	                                            <textarea class="form-control" rows="5" placeholder="Descrição"  >
+	                                           		 #{ocorrenciaBean.ocorrencia.descricao}
+	                                            </textarea>
+                                            </c:if>
+                                            <c:if test="#{loginBean.usuario.perfils.get(0).descricao=='morador' }">
+	                                            <textarea class="form-control" rows="5" placeholder="Descrição" disabled="disabled" >
+	                                            	#{ocorrenciaBean.ocorrencia.descricao}
+	                                            </textarea>
+                                            </c:if>
+
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                </div> 
+                           
+                                <c:if test="#{loginBean.usuario.perfils.get(0).descricao=='sindico' }">
+	                                <div class="form-group">
+	                                    <label for="inputEmail3" class="col-sm-2 control-label">Morador</label>
+	                                    <div class="col-sm-10">
+	                                        <div class="fg-line">
+	                                             <select class="form-control">
+	                                                    <option>Apartamento 1</option>
+	                                                    <option>Apartamento 2</option>
+	                                                    <option>Apartamento 3</option>
+	                                                    <option>Apartamento 4</option>
+	                                                    
+	                                                </select>
+	                                            
+	                                        </div>
+	                                    </div>
+	                                </div>
+                                </c:if>
+                               
+                                 <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Reincidente</label>
+                                    <div class="col-sm-10">
+                                        <div class="fg-line">
+                                        <h:selectOneRadio value="#{ocorrenciaBean.ocorrencia.reincidente}" disabled="true" >
+								   			<f:selectItem itemValue="true" itemLabel="Sim"  />
+								   			<f:selectItem itemValue="false" itemLabel="Não" />
+								   			
+								   		</h:selectOneRadio>
+                                             <label class="radio radio-inline m-r-20">
+                                             
+                                             </label>
+                                             <!-- <c:choose>
+		    									<c:when test="#{ocorrenciaBean.ocorrencia.reincidente}">
+				                                	<input type="radio" name="inlineRadioOptions" value="option1" checked="checked"/>
+				                              	</c:when>
+				                              	<c:otherwise>
+				                              		<input type="radio" name="inlineRadioOptions" value="option1"/>
+				                              	</c:otherwise>  
+				                              </c:choose>
+				                                <i class="input-helper"></i>  
+				                                Sim
+				                            </label>
+				                            
+				                            <label class="radio radio-inline m-r-20">
+                                             <c:choose>
+		    									<c:when test="#{!ocorrenciaBean.ocorrencia.reincidente}">
+				                                	<input type="radio" name="inlineRadioOptions" value="option1" checked="checked"/>
+				                              	</c:when>
+				                              	<c:otherwise>
+				                              		<input type="radio" name="inlineRadioOptions" value="option1"/>
+				                              	</c:otherwise>  
+				                              </c:choose>
+				                                <i class="input-helper"></i>  
+				                                Não
+				                            </label>
+				                                         -->    
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                               
+                                 <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Multa</label>
+                                    <div class="col-sm-10">
+                                        <div class="fg-line">
+                                            <h:selectOneRadio value="#{ocorrenciaBean.ocorrencia.multa}" disabled="true" >
+								   				<f:selectItem itemValue="true" itemLabel="Sim   " />
+								   				<f:selectItem itemValue="false" itemLabel="   Não"  />
+								   			
+								   			</h:selectOneRadio>
+				                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                           		<div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Valor</label>
+                                    <div class="col-sm-10">
+                                        <div class="fg-line">
+                                         <c:if test="#{loginBean.usuario.perfils.get(0).descricao=='sindico' }">
+	                                        <p:inputMask mask="999,99" id="valor" value="#{ocorrenciaBean.ocorrencia.valor}"  styleClass="form-control input-mask" >
+		                                     	<f:converter converterId="bigDecimalConverter"/>
+		                                    </p:inputMask>
+		                                    </c:if>
+                                            <c:if test="#{loginBean.usuario.perfils.get(0).descricao=='morador' }">
+                                            	#{ocorrenciaBean.ocorrencia.valor}
+                                            </c:if>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                               
+                               <c:if test="#{loginBean.usuario.perfils.get(0).descricao=='sindico' }">
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn bgm-green btn-sm">Incluir</button>
+                                        <button type="submit" class="btn bgm-gray btn-sm">Consultar</button>
+                     
+                                	</div>
+                                </div>
+                                
+                                </c:if>
+                            </div>
+                        </form>
+                    </div>
+					</div>
+		</ui:define>
+	</ui:composition>
+</html>

@@ -1,0 +1,229 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets" 
+			template="/sistema/layout/template.xhtml"
+			xmlns:p="http://primefaces.org/ui">	
+			  
+	<ui:define name="conteudo">
+	<!-- script de mascara -->
+	<script src="#{contextoBean.contexto}/vendors/input-mask/input-mask.min.js"/>
+	<script src="#{contextoBean.contexto}/vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+	<script src="#{contextoBean.contexto}/vendors/bower_components/chosen/chosen.jquery.min.js"></script>
+    <script src="#{contextoBean.contexto}/vendors/fileinput/fileinput.min.js"></script>
+    <script src="#{contextoBean.contexto}/vendors/farbtastic/farbtastic.min.js"></script>
+    
+
+
+    <div class="container">
+    	<div class="block-header"></div>
+			<div class="card">
+			<p:growl id="growl" sticky="true" /> 
+				<!-- <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+ 				<p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false"   showHeader="false">
+					<p:graphicImage value="/lifecondominio/img/ajaxloadingbar.gif" />
+				</p:dialog> -->
+            	<h:form id="Condominio" styleClass="form-horizontal" >            				
+                	
+                    	<div class="card-header ch-alt m-b-20"   >
+                        	<h2>Condomínios 
+                            	<small> Cadastro , atualização e pesquisa de novos condomínios no sistema lifecondominio.</small>
+                            </h2>
+							<a href="listacondominio.jsf" class="btn bgm-cyan btn-float">
+								<i class="zmdi zmdi-search"></i>
+							</a>
+				        </div>
+                        <div class="card-body card-padding">
+                        	<div class="row">
+                             <div class="col-xs-6">
+                                 <div class="input-group fg-float">
+                                     <span class="input-group-addon"><i class="zmdi zmdi-account-add"></i></span>
+                                     <div class="fg-line">
+                                         <p:inputText id="Nome" required="true" value="#{conBean.condominio.nome}"  styleClass="form-control"/>
+                                         <label class="fg-label">Nome</label>
+                                     </div>
+                                 </div>
+                             </div>                             
+                             <div class="col-xs-6">
+                                 <div class="input-group fg-float">
+                                     <span class="input-group-addon"><i class="zmdi zmdi-key"></i></span>
+                                     <div class="fg-line">
+                                       	<p:inputMask id="Cnpj" value="#{conBean.condominio.cnpj}"  styleClass="form-control"   mask="99.999.999/999-99" >
+                                       		<f:converter converterId="CnpjConverter"/>
+                                       	</p:inputMask>
+                                         <label class="fg-label">Cnpj: </label>
+                                     </div>
+                                 </div>
+                             </div>
+                             
+                             <br/>
+                             <br/>
+                             <br/>
+                             <br/>
+
+	                                
+	                                <div class="col-xs-4">
+	                                    <div class="input-group fg-float">
+	                                        <span class="input-group-addon"><i class="zmdi zmdi-pin"></i></span>
+	                                        <div class="fg-line">
+	                                            <p:inputText id="Endereco" value="#{conBean.condominio.endereco}" styleClass="form-control"/>
+	                                            <label class="fg-label">Endereço</label>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                
+	                                <div class="col-xs-4">
+	                                    <div class="input-group fg-float">
+	                                        <span class="input-group-addon"><i class="zmdi zmdi-pin"></i></span>
+	                                        <div class="fg-line">
+	                                            <p:inputText id="Bairro" value="#{conBean.condominio.bairro}" styleClass="form-control"/>
+	                                            <label class="fg-label">Bairro</label>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                
+	                                <div class="col-xs-4">
+	                                    <div class="input-group fg-float">
+	                                        <span class="input-group-addon"><i class="zmdi zmdi-local-post-office"></i></span>
+	                                        <div class="fg-line">
+	                                            <p:inputMask id="Cep" styleClass="form-control input-mask" value="#{conBean.condominio.cep}"  mask="99999-999" />
+	                                            <label class="fg-label">Cep </label>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                
+	                                <br/>
+	                                <br/>
+	                                <br/>
+	                                <br/>
+	                                
+	                                <div class="col-xs-4">
+	                                    <div class="input-group fg-float">
+	                                        <span class="input-group-addon"><i class="zmdi zmdi-pin"></i></span>
+	                                        <div class="fg-line">
+	                                            <p:inputText id="Cidade" value="#{conBean.condominio.cidade}" styleClass="form-control"/>
+	                                            <label class="fg-label">Cidade</label>
+	                                        </div>
+	                                    </div>
+	                                </div>
+									<div class="col-xs-4">
+		
+										<div class="input-group">
+											<span class="input-group-addon"><i class="zmdi zmdi-pin"></i></span>
+											<div class="fg-line">
+												<h:selectOneMenu value="#{conBean.condominio.estado}" styleClass="selectpicker">
+  														<f:selectItems value="#{conBean.estados}" />
+  												</h:selectOneMenu>	
+											</div>
+										</div>
+									</div>
+
+									<div class="col-sm-2">
+	                                    <div class="checkbox">
+	                                        <label>
+	                                            <h:selectBooleanCheckbox id="Ativo" value="#{conBean.condominio.ativo}" />
+	                                            <i class="input-helper"></i>
+	                                            ATIVO?
+	                                        </label>
+	                                    </div>
+                                	</div>
+	                                
+	                                <br/>
+	                                <br/>
+	                                <br/>
+	                                <br/>
+	 
+	                                
+	                                <div class="col-xs-4">
+	                                    <div class="input-group fg-float">
+	                                        <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+	                                        <div class="fg-line">
+	                                        <p:inputMask mask="99/99/9999" value="#{conBean.condominio.dataInicio}"  styleClass="form-control input-mask" id="dataInicio" label="Data de Inicio" >
+												<f:convertDateTime pattern="dd/MM/yyyy" />
+											</p:inputMask>
+	                                        <label class="fg-label">Data Inicio</label>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                
+	                                <div class="col-xs-4">
+	                                    <div class="input-group fg-float">
+	                                        <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+	                                        <div class="fg-line">
+	                                           <p:inputMask mask="99/99/9999" value="#{conBean.condominio.dataFinal}"  styleClass="form-control input-mask" id="dataFinal" label="Data de Fim" >
+												<f:convertDateTime pattern="dd/MM/yyyy" />
+											</p:inputMask>
+	                                           
+	                                            <label class="fg-label">Data Final</label>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                
+	                                <div class="col-xs-4">
+	                                    <div class="input-group fg-float">
+	                                        <span class="input-group-addon"><i class="zmdi zmdi-money"></i></span>
+	                                        <div class="fg-line">	
+	                                            
+	                                            <p:inputMask mask="999,99" id="Mensalidade" value="#{conBean.condominio.mensalidade}"  styleClass="form-control input-mask" >
+	                                            	<f:converter converterId="bigDecimalConverter"/>
+	                                            </p:inputMask>
+	                                            
+	                                            <label class="fg-label">Mensalidades</label>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                
+	                                <br/>
+	                                <br/>
+	                                <br/>
+	                                <br/>
+	 
+	                                
+	                                <div class="col-xs-4">
+	                                    <div class="input-group fg-float">
+	                                        <span class="input-group-addon"><i class="zmdi zmdi-face"></i></span>
+	                                        <div class="fg-line">
+	                                            <p:inputText id="Contato" value="#{conBean.condominio.contato}" styleClass="form-control"/>
+	                                            <label class="fg-label">Contato</label>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                
+	                                <div class="col-xs-4">
+	                                    <div class="input-group fg-float">
+	                                        <span class="input-group-addon"><i class="zmdi zmdi-phone"></i></span>
+	                                        <div class="fg-line">
+	                                        	<p:inputMask  id="Telefone" value="#{conBean.condominio.telefone}"  styleClass="form-control input-mask" mask="(99)99999-9999" />
+	                                            <label class="fg-label">Telefone</label>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                
+	                                <div class="col-xs-4">
+	                                    <div class="input-group fg-float">
+	                                        <span class="input-group-addon"><i class="zmdi zmdi-phone"></i></span>
+	                                        <div class="fg-line">	                             
+	                                            <p:inputMask id="Celular" value="#{conBean.condominio.celular}"  styleClass="form-control input-mask" mask="(99)99999-9999" />
+	                                            <label class="fg-label">Celular</label>
+	                                        </div>
+	                                    </div>
+	                                </div>
+                                 <br/>
+                                 <br/>
+                                 <br/>
+                                 <br/>                               
+	                             <br/>
+	                       </div>        
+	                       <div class="form-group">                             
+		                      <div class="col-sm-offset-2 col-sm-10">
+                                   <p:commandButton id="Salvar" ajax="false" value="Salvar" styleClass="btn bgm-red btn-sm" actionListener="#{conBean.salvar}"  />
+                              </div>
+                            </div>                                                           	
+                            </div>                      
+					</h:form>
+			</div>
+		  </div>		  
+		 				
+		</ui:define>
+			      
+</ui:composition>

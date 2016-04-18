@@ -1,0 +1,10 @@
+br\com\lifecondominio\dao\BaseDAO.class
+br\com\lifecondominio\dao\CondominioDAO.class
+br\com\lifecondominio\dao\TesteDAO.class
+br\com\lifecondominio\dao\OcorrenciaDAO.class
+br\com\lifecondominio\dao\ProdutorEntityManager.class
+br\com\lifecondominio\dao\Main.class
+br\com\lifecondominio\dao\AdministradoraDAO.class
+br\com\lifecondominio\dao\PerfilDAO.class
+br\com\lifecondominio\dao\UsuarioDAO.class
+br\com\lifecondominio\dao\EntityManagerProvider.class

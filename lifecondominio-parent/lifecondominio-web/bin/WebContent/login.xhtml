@@ -1,0 +1,129 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Life Condominio</title>
+        
+        <!-- Vendor CSS -->
+        <link href="#{contextoBean.contexto}/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet"/>
+        <link href="#{contextoBean.contexto}/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet"/>
+            
+        <!-- CSS -->
+        <link href="#{contextoBean.contexto}/css/app.min.1.css" rel="stylesheet"/>
+        <link href="#{contextoBean.contexto}/css/app.min.2.css" rel="stylesheet"/>
+    </h:head>
+    
+    <h:body class="login-content">
+        <!-- Login -->
+        <div class="lc-block toggled" id="l-login">
+                    
+            LIFE CONDOMINIO - GERENCIAMENTO<img src="#{contextoBean.contexto}/img/logo_login.png" />
+                      
+            <h:form id="forms" method="post">
+           
+            <div class="input-group m-b-20">
+                <h:messages id="mensagem" style="color:red"/>
+            </div>
+            
+         
+            <div class="input-group m-b-20">
+                <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+                <div class="fg-line">
+                	<h:inputText id="login" class="form-control"  value="#{loginBean.usuario.login}"  required="true"  requiredMessage="Login é obrigatório"  />
+             	</div>
+            </div>
+            
+            <div class="input-group m-b-20">
+                <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
+                <div class="fg-line">
+                	<h:inputSecret  id="password" value="#{loginBean.usuario.password}"    class="form-control" required="true"  requiredMessage="Senha é obrigatória" />
+                </div>
+            </div>
+            
+            <div class="clearfix"></div>
+            
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value=""/>
+                    <i class="input-helper"></i>
+                    Mantenha-me conectado
+                </label>
+            </div>
+            <br/>
+            <h:commandButton   value="ENTRAR" class="btn bgm-green btn-sm"  action="#{loginBean.doLogin}" ajax="false"/>            
+           </h:form>
+        
+        <ul class="login-navigation">
+            <li data-block="#l-register" class="bgm-red">Registrar</li>
+            <li data-block="#l-forget-password" class="bgm-orange">Esqueceu a senha?</li>
+        </ul>
+    </div>        
+    <!-- Register -->
+    <div class="lc-block" id="l-register">
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+            <div class="fg-line">
+                <input type="text" class="form-control" placeholder="Username"/>
+            </div>
+        </div>
+        
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
+            <div class="fg-line">
+                <input type="text" class="form-control" placeholder="Email "/>
+            </div>
+        </div>
+        
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
+            <div class="fg-line">
+                <input type="password" class="form-control" placeholder="Password"/>
+            </div>
+        </div>
+        
+        <div class="clearfix"></div>
+        
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value=""/>
+                <i class="input-helper"></i>
+		Contrato de licença
+            </label>
+        </div>
+        
+        <a href="aa" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
+        
+        <ul class="login-navigation">
+            <li data-block="#l-login" class="bgm-green">Login</li>
+            <li data-block="#l-forget-password" class="bgm-orange">Esqueceu a senha?</li>
+        </ul>
+    </div>
+    
+    <!-- Forgot Password -->
+    <div class="lc-block" id="l-forget-password">
+        <p class="text-left">Insira seu email</p>
+        
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
+            <div class="fg-line">
+                <input type="text" class="form-control" placeholder="Email Address"/>
+            </div>
+        </div>
+        <!-- ESQUECEU A SENHA -->
+        <a href="bbb" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
+        
+        <ul class="login-navigation">
+            <li data-block="#l-login" class="bgm-green">Login</li>
+            <li data-block="#l-register" class="bgm-red">Registrar</li>
+        </ul>
+    </div>   
+    
+    <script src="#{contextoBean.contexto}/js/functions.js"></script>
+    
+</h:body>
+</html>

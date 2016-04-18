@@ -1,0 +1,14 @@
+C:\workspace\lifecondominio-parent\lifecondominio-service\src\main\java\br\com\lifecondominio\service\exception\BusinessException.java
+C:\workspace\lifecondominio-parent\lifecondominio-service\src\main\java\br\com\lifecondominio\service\impl\AdministradoraService.java
+C:\workspace\lifecondominio-parent\lifecondominio-service\src\main\java\br\com\lifecondominio\service\IAdministradoraService.java
+C:\workspace\lifecondominio-parent\lifecondominio-service\src\main\java\br\com\lifecondominio\service\IPerfilService.java
+C:\workspace\lifecondominio-parent\lifecondominio-service\src\main\java\br\com\lifecondominio\service\ICondominioService.java
+C:\workspace\lifecondominio-parent\lifecondominio-service\src\main\java\br\com\lifecondominio\service\impl\UsuarioService.java
+C:\workspace\lifecondominio-parent\lifecondominio-service\src\main\java\br\com\lifecondominio\service\IService.java
+C:\workspace\lifecondominio-parent\lifecondominio-service\src\main\java\br\com\lifecondominio\service\IUsuarioService.java
+C:\workspace\lifecondominio-parent\lifecondominio-service\src\main\java\br\com\lifecondominio\service\impl\PerfilService.java
+C:\workspace\lifecondominio-parent\lifecondominio-service\src\main\java\br\com\lifecondominio\service\exception\CodigoMensagem.java
+C:\workspace\lifecondominio-parent\lifecondominio-service\src\main\java\br\com\lifecondominio\service\IOcorrenciaService.java
+C:\workspace\lifecondominio-parent\lifecondominio-service\src\main\java\br\com\lifecondominio\service\impl\CondominioService.java
+C:\workspace\lifecondominio-parent\lifecondominio-service\src\main\java\br\com\lifecondominio\service\impl\OcorrenciaService.java
+C:\workspace\lifecondominio-parent\lifecondominio-service\src\main\java\br\com\lifecondominio\service\impl\StringMD5.java
