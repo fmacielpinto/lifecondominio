@@ -33,9 +33,5 @@ public class CondominioDAO extends BaseDAO<Condominio> {
 		return super.findListResult(Condominio.FIND_POR_SINDICO, parameters);
 	}
 
-	public void beginTransaction() {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 }
